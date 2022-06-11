@@ -1,0 +1,12 @@
+{
+    "name": "Pizza Spinning Whatchamacallit",
+    "description": "command and control center for the Pizza Spinning Whatchamacallit",
+    "repository": "https://github.com/jabawack81/pizza-spinning-whatchamacallit",
+    "buildpacks": [
+    {
+        "url": "https://github.com/heroku/heroku-buildpack-inline.git"
+    },
+    {
+        "url": "heroku/nodejs"
+    }],
+}
