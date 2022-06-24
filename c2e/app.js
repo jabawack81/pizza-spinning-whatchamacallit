@@ -11,9 +11,11 @@ import indexRouter from './routes/index.js';
 
 var app = express();
 
-app.use(basicAuth({
+app.use(
+  basicAuth({
     users: { 'pizza-spinning': 'whatchamacallit' }
-}))
+  })
+)
 
 // view engine setup
 app.set('views', path.join('./views'));
