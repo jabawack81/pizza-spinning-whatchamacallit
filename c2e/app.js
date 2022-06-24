@@ -4,10 +4,16 @@ import path from 'path';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 import 'dotenv/config'
+import basicAuth  from'express-basic-auth';
+
 
 import indexRouter from './routes/index.js';
 
 var app = express();
+
+app.use(basicAuth({
+    users: { 'pizza-spinning': 'whatchamacallit' }
+}))
 
 // view engine setup
 app.set('views', path.join('./views'));
