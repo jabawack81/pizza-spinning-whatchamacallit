@@ -4,7 +4,7 @@ import path from 'path';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 import 'dotenv/config'
-import basicAuth  from'express-basic-auth';
+import * as basicAuth from 'express-basic-auth'
 
 
 import indexRouter from './routes/index.js';
