@@ -4,11 +4,13 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
-  button#start start
+  button#forward forward
+  button#backward backward
   button#stop stop
   script.
     const loaded = () => {
-      document.getElementById("start").addEventListener("click", (e) => doTheFetch("start") )
+      document.getElementById("forward").addEventListener("click", (e) => doTheFetch("forward") )
+      document.getElementById("backward").addEventListener("click", (e) => doTheFetch("backward") )
       document.getElementById("stop").addEventListener("click", (e) => doTheFetch("stop") )
     }
     const doTheFetch = (endpoint) => {

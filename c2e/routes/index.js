@@ -55,8 +55,12 @@ router.put("/start", checkSignIn, (req, res,next) => {
   client.publish('testtopic/1', 'start');
 })
 
-router.put("/stop", checkSignIn, (req, res,next) => {
-  client.publish('testtopic/1', 'stop');
+router.put("/forward", checkSignIn, (req, res,next) => {
+  client.publish('testtopic/1', 'forward');
+})
+
+router.put("/backward", checkSignIn, (req, res,next) => {
+  client.publish('testtopic/1', 'backward');
 })
 
 export default router;
