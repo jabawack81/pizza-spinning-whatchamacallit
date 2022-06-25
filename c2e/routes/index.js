@@ -51,8 +51,8 @@ router.get('/', checkSignIn, function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.put("/start", checkSignIn, (req, res,next) => {
-  client.publish('testtopic/1', 'start');
+router.put("/stop", checkSignIn, (req, res,next) => {
+  client.publish('testtopic/1', 'stop');
 })
 
 router.put("/forward", checkSignIn, (req, res,next) => {
