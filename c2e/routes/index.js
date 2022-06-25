@@ -32,18 +32,30 @@ client.subscribe('testtopic/1');
 // publish message 'Hello' to topic 'testtopic/1'
 // client.publish('testtopic/1', 'Hello');
 
+function checkSignIn(req, res, next){
+    console.log(req.session);
+   if(req.session.user){
+      next();     //If session exists, proceed to page
+   } else {
+       res.redirect('/login');
+      var err = new Error("Not logged in!");
+      next(err);  //Error, trying to access unauthorized page!
+   }
+}
+
 var router = express.Router();
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', checkSignIn, function(req, res, next) {
+    console.log(req.session);
   res.render('index', { title: 'Express' });
 });
 
-router.put("/start", (req, res,next) => {
+router.put("/start", checkSignIn, (req, res,next) => {
   client.publish('testtopic/1', 'start');
 })
 
-router.put("/stop", (req, res,next) => {
+router.put("/stop", checkSignIn, (req, res,next) => {
   client.publish('testtopic/1', 'stop');
 })
 

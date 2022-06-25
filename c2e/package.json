@@ -5,11 +5,11 @@
   "engines": {
     "node": "18.3.0",
     "yarn": "1.22.5"
-
   },
   "type": "module",
   "scripts": {
-    "start": "node ./bin/www.js"
+    "start": "node ./bin/www.js",
+    "dev": "nodemon ./bin/wwww.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -17,6 +17,7 @@
     "dotenv": "^16.0.1",
     "express": "~4.16.1",
     "express-basic-auth": "^1.2.1",
+    "express-session": "^1.17.3",
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",
     "morgan": "~1.9.1",

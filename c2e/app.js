@@ -3,21 +3,20 @@ import express from 'express';
 import path from 'path';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
-import 'dotenv/config'
-import basicAuth from 'express-basic-auth'
+import 'dotenv/config';
+import session from 'express-session';
 
 
 import indexRouter from './routes/index.js';
+import loginRouter from "./routes/login.js"
 
 var app = express();
 
-app.use(
-  basicAuth({
-    users: { 'pizza-spinning': 'whatchamacallit' }
-  })
-)
-
-// view engine setup
+app.use(session({
+  secret: 'keyboard cat',
+  resave: false,
+  saveUninitialized: true
+}));
 app.set('views', path.join('./views'));
 app.set('view engine', 'jade');
 
@@ -28,6 +27,7 @@ app.use(cookieParser());
 app.use(express.static(path.join('./public')));
 
 app.use('/', indexRouter);
+app.use("/login", loginRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
