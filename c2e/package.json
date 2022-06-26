@@ -19,9 +19,9 @@
     "express-basic-auth": "^1.2.1",
     "express-session": "^1.17.3",
     "http-errors": "~1.6.3",
-    "jade": "~1.11.0",
     "morgan": "~1.9.1",
-    "mqtt": "^4.3.7"
+    "mqtt": "^4.3.7",
+    "pug": "^3.0.2"
   },
   "devDependencies": {
     "dotenv": "^16.0.1",
