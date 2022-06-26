@@ -9,4 +9,32 @@
     {
         "url": "heroku/nodejs"
     }],
+    "env": {
+	    "MQTT_BROKER_HOST":{
+		   "description": "The URL of the Mqtt server" 
+	    },
+	    "MQTT_BROKER_PORT":{
+		    "description": "The port of the Mqtt server"
+	    },
+	    "MQTT_BROKER_PROTOCOL":{
+		    "description": "The protocol to use to connect to the Mqtt server"
+	    },
+	    "MQTT_BROKER_USERNAME":{
+		    "description": "The username for the Mqtt server"
+	    },
+	    "MQTT_BROKER_PASSWORD":{
+		    "description": "The password for the Mqtt server"
+	    },
+	    "USERNAME":{
+		    "description": "The username of the command and control app"
+	    },
+	    "PASSWORD":{
+		    "description": "The password for the user of the command anc control app"
+	    },
+	    "NODE_ENV": {
+		    "description": "The envinment the app is runing",
+		    "value": "production"
+	    }
+    }
+
 }
