@@ -38,8 +38,6 @@ function checkSignIn(req, res, next) {
     next(); //If session exists, proceed to page
   } else {
     res.redirect("/login");
-    var err = new Error("Not logged in!");
-    next(err); //Error, trying to access unauthorized page!
   }
 }
 
@@ -47,7 +45,6 @@ var router = express.Router();
 
 /* GET home page. */
 router.get("/", checkSignIn, function (req, res, next) {
-  console.log(req.session);
   res.render("index", { title: "Express" });
 });
 
