@@ -9,12 +9,12 @@
   "type": "module",
   "scripts": {
     "start": "node ./bin/www.js",
-    "dev": "npx nodemon ./bin/wwww.js"
+    "dev": "npx nodemon ./bin/www.js  --exec 'node -r \"dotenv/config\"'",
+    "prettify": "npx prettier --write ."
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
-    "dotenv": "^16.0.1",
     "express": "~4.16.1",
     "express-basic-auth": "^1.2.1",
     "express-session": "^1.17.3",
@@ -24,6 +24,7 @@
     "mqtt": "^4.3.7"
   },
   "devDependencies": {
+    "dotenv": "^16.0.1",
     "nodemon": "^2.0.18",
     "prettier": "^2.7.1"
   }

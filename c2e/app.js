@@ -3,7 +3,6 @@ import express from "express";
 import path from "path";
 import cookieParser from "cookie-parser";
 import logger from "morgan";
-import "dotenv/config";
 import session from "express-session";
 
 import indexRouter from "./routes/index.js";
