@@ -45,19 +45,22 @@ var router = express.Router();
 
 /* GET home page. */
 router.get("/", checkSignIn, function (req, res, next) {
-  res.render("index", { title: "Express" });
+  res.render("index");
 });
 
 router.put("/stop", checkSignIn, (req, res, next) => {
   client.publish("testtopic/1", "stop");
+  res.status(204).send();
 });
 
 router.put("/forward", checkSignIn, (req, res, next) => {
   client.publish("testtopic/1", "forward");
+  res.status(204).send();
 });
 
 router.put("/backward", checkSignIn, (req, res, next) => {
   client.publish("testtopic/1", "backward");
+  res.status(204).send();
 });
 
 export default router;
