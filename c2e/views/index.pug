@@ -5,13 +5,21 @@ block head
       src="/index.js"
       defer="defer"
     )
+    link(
+      rel="stylesheet"
+      href="/stylesheets/index.css"
+    )
 
 
 block content
   .row.mt-5
     .offset-1.col-10.offset-sm-2.col-sm-8.offset-md-4.col-md-4.text-center
-      h1= title
       p Welcome to #{title}
+  .row.mt-5
+    .offset-1.col-10.offset-sm-2.col-sm-8.offset-md-4.col-md-4.text-center
+      img(src="/img/pizza.png")
+  .row.mt-5
+    .offset-1.col-10.offset-sm-2.col-sm-8.offset-md-4.col-md-4.text-center
       .btn-group(role='group' aria-label='Basic example')
         button#forward.btn.btn-primary(type='button') Forward
         button#backward.btn.btn-primary(type='button') Backward

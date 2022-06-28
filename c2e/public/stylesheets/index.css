@@ -1,0 +1,32 @@
+.forward {
+  animation-name: forward;
+  animation-duration: 5000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes forward {
+  0% {
+    transform: rotate(0deg) rotate(90deg);
+  }
+  100% {
+    transform: rotate(0deg) rotate(357deg);
+  }
+}
+
+
+.backward {
+  animation-name: backward;
+  animation-duration: 5000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes backward {
+  from {
+    transform:rotate(360deg);
+  }
+  to {
+    transform:rotate(0deg);
+  }
+}
